@@ -1,0 +1,68 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Diagramme UML">
+    <mxGraphModel dx="1260" dy="781" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Classe Assuré -->
+        <mxCell id="assure" value="Assuré" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="80" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="assure_attrs" value="idAssuré : int&#10;nom : String&#10;adresse : String&#10;numéroTéléphone : String&#10;email : String" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="assure">
+          <mxGeometry x="0" y="30" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="assure_methods" value="ajouterAssuré()&#10;modifierAssuré()&#10;supprimerAssuré()" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="assure">
+          <mxGeometry x="0" y="120" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Classe Contrat -->
+        <mxCell id="contrat" value="Contrat" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="80" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="contrat_attrs" value="idContrat : int&#10;numéroContrat : String&#10;dateDébut : Date&#10;dateFin : Date&#10;typeContrat : String&#10;plafondRemboursement : float" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="contrat">
+          <mxGeometry x="0" y="30" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="contrat_methods" value="ajouterContrat()&#10;modifierContrat()&#10;résilierContrat()" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="contrat">
+          <mxGeometry x="0" y="160" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Classe Remboursement -->
+        <mxCell id="remboursement" value="Remboursement" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="remboursement_attrs" value="idRemboursement : int&#10;montantRemboursé : float&#10;dateRemboursement : Date&#10;statut : String" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="remboursement">
+          <mxGeometry x="0" y="30" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="remboursement_methods" value="calculerRemboursement()&#10;mettreÀJourStatut()" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="remboursement">
+          <mxGeometry x="0" y="120" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Classe Prestation -->
+        <mxCell id="prestation" value="Prestation" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="300" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="prestation_attrs" value="idPrestation : int&#10;typePrestation : String&#10;datePrestation : Date&#10;coûtPrestation : float" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="prestation">
+          <mxGeometry x="0" y="30" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="prestation_methods" value="ajouterPrestation()&#10;modifierPrestation()&#10;supprimerPrestation()" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="prestation">
+          <mxGeometry x="0" y="120" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Relations -->
+        <mxCell id="relation_assure_contrat" edge="1" source="assure" target="contrat" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+          <mxCell style="endArrow=none;html=1;" />
+        </mxCell>
+        <mxCell id="relation_contrat_remboursement" edge="1" source="contrat" target="remboursement" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+          <mxCell style="endArrow=none;html=1;" />
+        </mxCell>
+        <mxCell id="relation_remboursement_prestation" edge="1" source="remboursement" target="prestation" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+          <mxCell style="endArrow=none;html=1;" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
